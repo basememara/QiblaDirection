@@ -6,6 +6,7 @@ Detects user's angle to Kaaba.
 **QiblaDirection** can be added to your project using **Cocoapods**.  
 
 ```
+use_frameworks!
 pod 'QiblaDirection'
 ```
 
