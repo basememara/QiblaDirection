@@ -1,0 +1,12 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'QiblaDirection_Example', :exclusive => true do
+  pod "QiblaDirection", :path => "../"
+end
+
+target 'QiblaDirection_Tests', :exclusive => true do
+  pod "QiblaDirection", :path => "../"
+
+  
+end

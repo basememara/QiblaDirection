@@ -1,0 +1,14 @@
+PODS:
+  - QiblaDirection (0.1.0)
+
+DEPENDENCIES:
+  - QiblaDirection (from `../`)
+
+EXTERNAL SOURCES:
+  QiblaDirection:
+    :path: ../
+
+SPEC CHECKSUMS:
+  QiblaDirection: fb4837a263e0d17c0fb168c8bdfb219f208e6f8e
+
+COCOAPODS: 0.37.2

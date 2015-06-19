@@ -1,0 +1,6 @@
+framework module Pods_QiblaDirection_Example {
+  umbrella header "Pods-QiblaDirection_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
