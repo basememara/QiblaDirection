@@ -45,7 +45,7 @@ public class QiblaDirection: NSObject, CLLocationManagerDelegate {
 
 		lmanager.activityType = CLActivityType.Other
 		lmanager.desiredAccuracy = kCLLocationAccuracyThreeKilometers
-		lmanager.distanceFilter = 0.1
+		lmanager.distanceFilter = 1000.0
 		lmanager.delegate = self;
 
 		self.delegate = delegate
@@ -54,7 +54,7 @@ public class QiblaDirection: NSObject, CLLocationManagerDelegate {
 
 	deinit{
 		self.delegate = nil
-		lmanager.stopMonitoringSignificantLocationChanges()
+		lmanager.stopUpdatingLocation()
 		lmanager.stopUpdatingHeading()
 	}
 
@@ -62,7 +62,7 @@ public class QiblaDirection: NSObject, CLLocationManagerDelegate {
 	public func tryStartUpdating()
 	{
 		if isLocationServiceAuthorized(){
-			lmanager.startMonitoringSignificantLocationChanges()
+			lmanager.startUpdatingLocation()
 			lmanager.startUpdatingHeading()
 			self.currentLocation = lmanager.location
 		}
