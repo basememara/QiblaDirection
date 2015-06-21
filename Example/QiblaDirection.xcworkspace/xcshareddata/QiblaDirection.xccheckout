@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>6E8A7D4D-ADB9-4F08-AA1D-E4A6C0B380AD</string>
+	<key>IDESourceControlProjectName</key>
+	<string>QiblaDirection</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>EE634D3CD02CBB5B1692BF94E500F29A4A86FD07</key>
+		<string>https://github.com/ZamzamInc/QiblaDirection</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Example/QiblaDirection.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>EE634D3CD02CBB5B1692BF94E500F29A4A86FD07</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/ZamzamInc/QiblaDirection</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>EE634D3CD02CBB5B1692BF94E500F29A4A86FD07</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EE634D3CD02CBB5B1692BF94E500F29A4A86FD07</string>
+			<key>IDESourceControlWCCName</key>
+			<string>QiblaDirection-Zamzam</string>
+		</dict>
+	</array>
+</dict>
+</plist>

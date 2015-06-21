@@ -12,7 +12,9 @@ import CoreLocation
 @objc public protocol QiblaDirectionDelegate{
 	optional func qiblaDirectionNeedsAuthorization()
 	optional func qiblaAngleDidChanged(angle: Double)
-	optional func qiblaHeadingDidChange(inPoint: Bool, headingAngle: Double)
+    optional func qiblaHeadingDidChange(inPoint: Bool, headingAngle: Double)
+    optional func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!)
+    optional func locationManager(manager: CLLocationManager!, didUpdateHeading newHeading: CLHeading!)
 }
 
 public class QiblaDirection: NSObject, CLLocationManagerDelegate {
@@ -125,14 +127,17 @@ public class QiblaDirection: NSObject, CLLocationManagerDelegate {
 
 	// MARK: - CLLocationManagerDelegate
 	public func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-		if let currentLocation: CLLocation = locations.last as? CLLocation{
+        self.delegate?.locationManager?(manager, didUpdateLocations: locations)
+        
+        if let currentLocation: CLLocation = locations.last as? CLLocation{
 			self.currentLocation = currentLocation
 		}
 	}
 
 	public func locationManager(manager: CLLocationManager!, didUpdateHeading newHeading: CLHeading!) {
-
-		if let magneticHeading = newHeading?.magneticHeading
+        self.delegate?.locationManager?(manager, didUpdateHeading: newHeading)
+        
+        if let magneticHeading = newHeading?.magneticHeading
 		{
 			if let coordinate = self.currentLocation?.coordinate
 			{
