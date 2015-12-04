@@ -99,8 +99,12 @@ public class QiblaDirection: NSObject, CLLocationManagerDelegate {
 	}
 
 	func angleOfQiblaClockwiseFromTrueNorth(lat: Double, lon: Double) -> Double?{
-
-		if abs(lat - self.lattituteOfMecca) < abs(0.0-0.01) && abs(lon - self.longtitueOfMecca) < abs(0.0-0.01){
+        let a = abs(lat - self.lattituteOfMecca)
+        let b = abs(0.0-0.01)
+        let c = abs(lon - self.longtitueOfMecca)
+        let d = abs(0.0-0.01)
+        
+		if a < b && c < d {
 			// Already in Mecca
 			self.delegate?.qiblaHeadingDidChange?(true, headingAngle: 0.0)
 			return nil
@@ -126,46 +130,42 @@ public class QiblaDirection: NSObject, CLLocationManagerDelegate {
 	}
 
 	// MARK: - CLLocationManagerDelegate
-	public func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+	public func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         self.delegate?.locationManager?(manager, didUpdateLocations: locations)
         
-        if let currentLocation: CLLocation = locations.last as? CLLocation{
+        if let currentLocation: CLLocation = locations.last {
 			self.currentLocation = currentLocation
 		}
 	}
 
-	public func locationManager(manager: CLLocationManager!, didUpdateHeading newHeading: CLHeading!) {
+	public func locationManager(manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
         self.delegate?.locationManager?(manager, didUpdateHeading: newHeading)
         
-        if let magneticHeading = newHeading?.magneticHeading
-		{
-			if let coordinate = self.currentLocation?.coordinate
-			{
-				let currentAngle = Double(magneticHeading)
-				if let angleOfQibla = angleOfQiblaClockwiseFromTrueNorth(coordinate.latitude, lon: coordinate.longitude)
-				{
-					self.angleOfQibla = angleOfQibla
+        if let coordinate = self.currentLocation?.coordinate {
+            let currentAngle = Double(newHeading.magneticHeading)
+            if let angleOfQibla = angleOfQiblaClockwiseFromTrueNorth(coordinate.latitude, lon: coordinate.longitude)
+            {
+                self.angleOfQibla = angleOfQibla
 
-					// In Point
-					let result = currentAngle - angleOfQibla
-					var inPoint = false
-					if result < self.accurency && result > (-1.0 * self.accurency) {
-						inPoint = true
-					}
+                // In Point
+                let result = currentAngle - angleOfQibla
+                var inPoint = false
+                if result < self.accurency && result > (-1.0 * self.accurency) {
+                    inPoint = true
+                }
 
-					// Inform delegate
-					self.heading = currentAngle
-					self.delegate?.qiblaHeadingDidChange?(inPoint, headingAngle: currentAngle)
-				}
-			}
-		}
+                // Inform delegate
+                self.heading = currentAngle
+                self.delegate?.qiblaHeadingDidChange?(inPoint, headingAngle: currentAngle)
+            }
+        }
 	}
 
-	public func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+	public func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
 		self.tryStartUpdating()
 	}
 
-	public func locationManagerShouldDisplayHeadingCalibration(manager: CLLocationManager!) -> Bool {
+	public func locationManagerShouldDisplayHeadingCalibration(manager: CLLocationManager) -> Bool {
 		return self.shouldDisplayHeadingCalibration
 	}
 }

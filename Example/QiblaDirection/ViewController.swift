@@ -49,11 +49,11 @@ class ViewController: UIViewController, QiblaDirectionDelegate {
             self.currentDegrees = offSetDegrees
         })
         
-        println(label)
+        print(label)
     }
     
     func qiblaAngleDidChanged(angle: Double) {
-        println("Qibla Angle: \(angle) degree")
+        print("Qibla Angle: \(angle) degree")
     }
     
     func radianToDegrees(radians: Double) -> Double {
