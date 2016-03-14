@@ -30,7 +30,7 @@ public class QiblaDirection: NSObject, CLLocationManagerDelegate {
 	var currentLocation : CLLocation?
 	var askForAuthorizationIfNeeded = false
 	public var heading: Double?
-	public var delegate: QiblaDirectionDelegate?
+	public weak var delegate: QiblaDirectionDelegate?
 
 	public var angleOfQibla: Double?{
 		didSet{
