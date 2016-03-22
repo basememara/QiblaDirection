@@ -1,6 +1,0 @@
-framework module QiblaDirection {
-  umbrella header "Pods-QiblaDirection_Tests-QiblaDirection-umbrella.h"
-
-  export *
-  module * { export * }
-}
