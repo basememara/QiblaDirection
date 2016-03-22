@@ -11,8 +11,6 @@
 		8B344C821CA1A706006A5135 /* QiblaDirection.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B344C591CA19CF2006A5135 /* QiblaDirection.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8B344C831CA1A706006A5135 /* QiblaDirection.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B344C591CA19CF2006A5135 /* QiblaDirection.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8B344C851CA1A85A006A5135 /* QiblaDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B344C841CA1A85A006A5135 /* QiblaDirection.swift */; };
-		8B344C911CA1B208006A5135 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 8B344C8C1CA1B208006A5135 /* README.md */; };
-		8B344C921CA1B208006A5135 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 8B344C8C1CA1B208006A5135 /* README.md */; };
 		8B344C9C1CA1B527006A5135 /* QiblaDirection_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B344C9B1CA1B527006A5135 /* QiblaDirection_iOSTests.swift */; };
 		8B344C9E1CA1B527006A5135 /* QiblaDirection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B344C561CA19CF2006A5135 /* QiblaDirection.framework */; };
 		8B344CAB1CA1B545006A5135 /* QiblaDirection_tvOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B344CAA1CA1B545006A5135 /* QiblaDirection_tvOSTests.swift */; };
@@ -608,7 +606,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B344C911CA1B208006A5135 /* README.md in Sources */,
 				8B344CFC1CA1C149006A5135 /* QiblaDirectionDelegate.swift in Sources */,
 				8B344C851CA1A85A006A5135 /* QiblaDirection.swift in Sources */,
 			);
@@ -618,7 +615,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B344C921CA1B208006A5135 /* README.md in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

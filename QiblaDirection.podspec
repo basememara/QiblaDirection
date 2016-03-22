@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name = 'QiblaDirection'
-    s.version = '0.2.0'
+    s.version = '0.2.1'
     s.license = 'MIT'
     s.summary = 'Detects users angle to Kaaba in Swift'
     s.homepage = 'https://github.com/ethemozcan/QiblaDirection'
