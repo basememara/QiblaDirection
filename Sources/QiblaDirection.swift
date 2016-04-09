@@ -19,7 +19,7 @@ public class QiblaDirection: NSObject, CLLocationManagerDelegate {
     
     // MARK: - Properties
     var lmanager : CLLocationManager = CLLocationManager()
-    var currentLocation : CLLocation?
+    public var currentLocation : CLLocation?
     var askForAuthorizationIfNeeded = false
     public var heading: Double?
     public weak var delegate: QiblaDirectionDelegate?
